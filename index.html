@@ -11,8 +11,12 @@
 <div id="content">Скрипт</div>  
       
     <script>  
+        var count = 0;
         function show()  
         {  
+            count = count + 1;
+            $("#content").append(" ");
+            $("#content").append(count);
             $.ajax({
               url: "time.php",
               cache: false,
