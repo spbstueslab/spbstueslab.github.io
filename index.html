@@ -13,12 +13,12 @@
     <script>  
         function show()  
         {  
-            $.ajax({  
-                url: "http://eslab2018.atwebpages.com/data-income.html",  
-                cache: false,  
-                success: function(html){  
-                    $("#content").html(html);  
-                }  
+            $.ajax({
+              url: "time.php",
+              cache: false,
+              success: function(html){
+                $("#results").append(html);
+              }
             });  
         }  
       
