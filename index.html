@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<title>MCS51</title>
+</HEAD>
+<BODY>
+Добро пожаловать на сайт <b>MCS51!</b><br>
+Для просмотра информации о номере нажатой на контроллере клавиши перейдите по ссылке <A HREF="/output.html">вывод </A><br> 
+Для просмотра информации полученной с МК перейдите по ссылке <A HREF="/data-income.html">вывод </A><br> 
+Для ввода информации в контроллер перейдите по ссылке <A HREF="/input.html">ввод </A>
+<div id="content"></div>  
+      
+    <script>  
+        function show()  
+        {  
+            $.ajax({  
+                url: "time.php",  
+                cache: false,  
+                success: function(html){  
+                    $("#content").html(html);  
+                }  
+            });  
+        }  
+      
+        $(document).ready(function(){  
+            show();  
+            setInterval('show()',1000);  
+        });  
+    </script>
+</BODY>
+</HTML>
